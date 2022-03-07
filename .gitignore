@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+
+# Project level and NPM
+_site
+node_modules
