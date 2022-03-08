@@ -1,0 +1,23 @@
+.blog-post-header {
+    margin: 2.6em 0;
+}
+
+.blog-post-header_title {
+    font-family: var(--font-title);
+    font-size: 3em;
+
+    margin: 0;
+}
+
+.blog-post-header_summary {
+    font-family: var(--font-summary);
+    font-size: 1.4em;
+
+    margin: 0.6em 0;
+
+    color: var(--grey);
+}
+
+.blog-post-content {
+    font-family: var(--font-article);
+}
