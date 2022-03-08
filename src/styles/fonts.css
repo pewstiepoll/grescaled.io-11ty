@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Staatlichesz";
+    src: url(/fonts/Staatliches-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Sintony Bold';
+    src: url(/fonts/Sintony/Sintony-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Sintony';
+    src: url(/fonts/Sintony/Sintony-Regular.ttf);
+}
