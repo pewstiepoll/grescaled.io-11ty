@@ -1,4 +1,39 @@
+:root {
+    --white: rgb(252, 252, 253);
+    --black: rgb(13, 13, 13);
+    --grey: rgb(112, 110, 135);
+
+    --font-logo: 'Staatliches';
+    --font-title: 'Sintony Bold';
+    --font-summary: 'Sintony';
+    --font-article: 'Poppins';
+}
+
 .container {
-    width: 768px;
+    color: var(--black);
+    background-color: var(--white);
+
+    width: 780px;
     margin: 0 auto;
+}
+
+/* Header styling */
+.logo {
+    margin: 0;
+    padding: 0.2em 0;
+    font: 600 4em var(--font-logo);
+}
+
+.logo span {
+    padding: 0 0.2em;
+    display: inline-block;
+}
+
+.logo span:first-child {
+    padding-left: 0;
+}
+
+.logo span:last-child {
+    color: var(--white);
+    background-color: var(--black);
 }
