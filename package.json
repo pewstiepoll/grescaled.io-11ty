@@ -13,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "1.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0"
   }
 }
