@@ -33,6 +33,11 @@ a:not(.logo a):hover {
     background-color: var(--black);
 }
 
+a:not(.logo a):focus {
+    outline: 2px dashed var(--black);
+    outline-offset: 0.2rem;
+}
+
 .container {
     color: var(--black);
     background-color: var(--white);
