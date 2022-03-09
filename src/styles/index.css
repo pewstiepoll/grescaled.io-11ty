@@ -7,6 +7,30 @@
     --font-title: 'Sintony Bold';
     --font-summary: 'Sintony';
     --font-article: 'Poppins';
+
+    --font-xxxlarge: 48px;
+    --font-xxlarge: 40px;
+    --font-xlarge: 34px;
+    --font-large: 28px;
+    --font-medium: 20px;
+    --font-small: 16px;
+    --font-xsmall: 14px;
+    --font-xxsmall: 12px;
+
+    --content-spacing: 22px;
+}
+
+/* Global overwrites */
+a:not(.logo a) {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    box-shadow: var(--black) 0 -2px 0 0 inset;
+}
+
+a:not(.logo a):hover {
+    color: var(--white);
+    background-color: var(--black);
 }
 
 .container {

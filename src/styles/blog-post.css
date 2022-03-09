@@ -1,17 +1,33 @@
+:root {
+    --code-background: #101010;
+    --code-foreground: #ebebeb;
+
+    --code-token-comment: #7c7b7b;
+    --code-token-keyword: #9d9d9d;
+    --code-token-operator: #ebebeb;
+    --code-token-number: #ebebeb;
+    --code-token-string: #ebebeb;
+    --code-token-function: #9d9d9d;
+    --code-token-punctuation: #9d9d9d;
+    --code-token-parameter: #ebebeb;
+}
+
 .blog-post-header {
-    margin: 2.6em 0;
+    margin: 1.6em 0;
 }
 
 .blog-post-header_title {
+    color: var(--white);
+    background-color: var(--black);
     font-family: var(--font-title);
-    font-size: 3em;
+    font-size: var(--font-xxxlarge);
 
     margin: 0;
 }
 
 .blog-post-header_summary {
     font-family: var(--font-summary);
-    font-size: 1.4em;
+    font-size: var(--font-medium);
 
     margin: 0.6em 0;
 
@@ -21,3 +37,36 @@
 .blog-post-content {
     font-family: var(--font-article);
 }
+
+.blog-post-content > * {
+    margin: var(--content-spacing) 0 0;
+}
+
+.blog-post-content h2 {
+    margin-top: var(--content-spacing);
+    font-size: var(--font-xxlarge);
+}
+
+.blog-post-content :is(h2, h3) {
+    margin-top: calc(var(--content-spacing) * 2);
+}
+
+.blog-post-content pre {
+    padding: 15px;
+    color: var(--code-foreground);
+    background-color: var(--code-background);
+}
+
+.blog-post-content p, 
+.blog-post-content pre {
+    font-size: var(--font-medium);
+}
+
+.blog-post-content code > .comment { color: var(--code-token-comment); }
+.blog-post-content code > .keyword { color: var(--code-token-keyword); font-weight: bold; }
+.blog-post-content code > .operator { color: var(--code-token-operator); }
+.blog-post-content code > .number { color: var(--code-token-number); font-weight: bold; }
+.blog-post-content code > :is(.string, .template-string) { color: var(--code-token-string); font-style: italic; }
+.blog-post-content code > .function { color: var(--code-token-function); }
+.blog-post-content code > .punctuation { color: var(--code-token-punctuation); }
+.blog-post-content code > .parameter { color: var(--code-token-parameter); }
