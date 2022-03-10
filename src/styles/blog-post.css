@@ -36,37 +36,57 @@
 
 .blog-post-content {
     font-family: var(--font-article);
+
+    * {
+        margin: var(--content-spacing) 0 0;
+    }
+
+    h2 {
+        margin-top: var(--content-spacing);
+        font-size: var(--font-xxlarge);
+    }
+
+    h2, h3 {
+        margin-top: calc(var(--content-spacing) * 2);
+    }
+
+    code {
+        padding: 5px;
+        border-radius: 5px;
+
+        color: var(--white);
+        background-color: var(--black);
+    }
+
+    pre {
+        padding: 15px;
+        border-radius: 5px;
+
+        color: var(--code-foreground);
+        background-color: var(--code-background);
+    }
+
+    p, pre {
+        font-size: var(--font-medium);
+    }
+
+    blockquote {
+        padding-left: 15px;
+        border-left: 5px solid black;
+    }
+
+    strong {
+        font-family: 'Poppins Bold';
+    }
 }
 
-.blog-post-content > * {
-    margin: var(--content-spacing) 0 0;
+.blog-post-content code {
+    & > .comment { color: var(--code-token-comment); }
+    & > .keyword { color: var(--code-token-keyword); font-weight: bold; }
+    & > .operator { color: var(--code-token-operator); }
+    & > .number { color: var(--code-token-number); font-weight: bold; }
+    & > :is(.string, .template-string) { color: var(--code-token-string); font-style: italic; }
+    & > .function { color: var(--code-token-function); }
+    & > .punctuation { color: var(--code-token-punctuation); }
+    & > .parameter { color: var(--code-token-parameter); }
 }
-
-.blog-post-content h2 {
-    margin-top: var(--content-spacing);
-    font-size: var(--font-xxlarge);
-}
-
-.blog-post-content :is(h2, h3) {
-    margin-top: calc(var(--content-spacing) * 2);
-}
-
-.blog-post-content pre {
-    padding: 15px;
-    color: var(--code-foreground);
-    background-color: var(--code-background);
-}
-
-.blog-post-content p, 
-.blog-post-content pre {
-    font-size: var(--font-medium);
-}
-
-.blog-post-content code > .comment { color: var(--code-token-comment); }
-.blog-post-content code > .keyword { color: var(--code-token-keyword); font-weight: bold; }
-.blog-post-content code > .operator { color: var(--code-token-operator); }
-.blog-post-content code > .number { color: var(--code-token-number); font-weight: bold; }
-.blog-post-content code > :is(.string, .template-string) { color: var(--code-token-string); font-style: italic; }
-.blog-post-content code > .function { color: var(--code-token-function); }
-.blog-post-content code > .punctuation { color: var(--code-token-punctuation); }
-.blog-post-content code > .parameter { color: var(--code-token-parameter); }

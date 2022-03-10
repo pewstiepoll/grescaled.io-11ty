@@ -9,6 +9,11 @@
 }
 
 @font-face {
+    font-family: 'Poppins Bold';
+    src: url(/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
     font-family: 'Sintony Bold';
     src: url(/fonts/Sintony/Sintony-Bold.ttf);
 }

@@ -1,12 +1,19 @@
-const SyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
+const UserConfig = require("@11ty/eleventy/src/UserConfig");
+const SyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const PostCSSPlugin = require("eleventy-postcss-extension");
 
-module.exports = (eleventyConfig) => {
+/**
+ * Eleventy configuration function
+ * @param {UserConfig} config 
+ * @returns {Object}
+ */
+module.exports = (config) => {
     // Plugins
-    eleventyConfig.addPlugin(SyntaxHighlightPlugin);
+    config.addPlugin(PostCSSPlugin);
+    config.addPlugin(SyntaxHighlightPlugin);
 
     // Path-throughs
-    eleventyConfig.addPassthroughCopy("src/fonts/**/*.ttf");
-    eleventyConfig.addPassthroughCopy("src/styles/**/*.css");
+    config.addPassthroughCopy("src/fonts/**/*.ttf");
 
     return {
             dir: {
