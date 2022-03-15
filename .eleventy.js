@@ -1,6 +1,6 @@
 const UserConfig = require("@11ty/eleventy/src/UserConfig");
 const SyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const PostCSSPlugin = require("eleventy-postcss-extension");
+const PostCSSPlugin = require("eleventy-plugin-postcss");
 
 /**
  * Eleventy configuration function
