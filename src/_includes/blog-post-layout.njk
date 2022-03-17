@@ -1,17 +1,9 @@
 {% extends "layout.njk" %}
 
-{%block styles %}
-<link rel="stylesheet" href="/styles/blog-post.css">
-{%endblock %}
-
 {%block main %}
-    <main class="blog-post">
-        <header class="blog-post-header">
-            <h1 class="blog-post-header_title">{{title}}</h1>
-            <h3 class="blog-post-header_summary">{{summary}}</h3>
-        </header>
-        <article class="blog-post-content">
-            {{content | safe}}
-        </article>
-    </main>
+    <h1>{{title}}</h1>
+    <h3 class="summary">{{summary}}</h3>
+    <article>
+        {{content | safe}}
+    </article>
 {% endblock %}

@@ -16,14 +16,14 @@
 </head>
 <body class="container">
   <header class="header">
-      <h1 class="logo">
-        <a href="{{website.url}}"><span>GREY</span><span>SCALED</span></a>
-      </h1>
+      <div class="logo">
+        <a class="logo-link" href="{{website.url}}"><span>GREY</span><span>SCALED</span></a>
+      </div>
   </header>
-  {%block main %}
-  <main class="content">
-    <h1 style="color: red">Page is missing "main" block<h1>
+  <main>
+    {%block main %}
+      <h1 style="color: red">Page is missing "main" block<h1>
+    {% endblock %}
   </main>
-  {% endblock %}
 </body>
 </html>
