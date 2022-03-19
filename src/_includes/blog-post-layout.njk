@@ -3,6 +3,18 @@
 {%block main %}
     <h1>{{title}}</h1>
     <h3 class="summary">{{summary}}</h3>
+    <div class="meta">
+        <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
+        <span>{{duration}} minutes</span>
+        <span>
+        {% for tag in tags %}
+            {# Exclude blog-posts tags from being shown #}
+            {% if tag !== "blog-posts" %}
+            <a href="/tags/{{tag}}">#{{tag}}</a>
+            {% endif %}
+        {% endfor %}
+        </span>
+    </div>
     <article>
         {{content | safe}}
     </article>

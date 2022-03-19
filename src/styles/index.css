@@ -54,7 +54,8 @@ a {
     font-family: var(--font-article);
 }
 
-main > * {
+main > *,
+article > * {
     margin: var(--content-spacing) 0;
 }
 
@@ -106,6 +107,12 @@ main > * {
     color: var(--grey);
 }
 
+.meta {
+    & > * + *:before {
+        content: " | ";
+    }
+}
+
 .container {
     width: 780px;
     margin: 0 auto;
@@ -124,15 +131,15 @@ h1 {
 }
 
 h2 {
-    font-size: var(--font-xxlarge);
-}
-
-h3 {
     font-size: var(--font-xlarge);
 }
 
-h4 {
+h3 {
     font-size: var(--font-large);
+}
+
+h4 {
+    font-size: var(--font-medium);
 }
 
 a {
@@ -167,11 +174,13 @@ pre {
     padding: 15px;
     border-radius: 5px;
 
+    overflow-y: scroll;
+
     color: var(--code-foreground);
     background-color: var(--code-background);
 }
 
-p, pre {
+p, pre, li {
     font-size: var(--font-medium);
 }
 
