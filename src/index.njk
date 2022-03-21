@@ -1,5 +1,34 @@
 {% extends "layout.njk" %}
 
 {% block main %}
-    <h3 class="summary">Software engineer, open-source contributor, technical writer.<br/>I like to write about <a href="#">#webdev</a>.</h3>
+    <h3 class="summary">
+        Software engineer, open-source contributor, technical writer.
+        <br/>
+        I write about 
+        <a href="/tags/webdev">#webdev</a>.
+    </h3>
+    <h2>All posts</h2>
+    {% for post in collections.posts %}
+        <article class="article-block">
+            <header>
+                <h3>
+                    <a class="link-undecorate" href="{{post.data.page.url}}">{{post.data.title}}</a>
+                </h3>
+                <p>{{post.data.summary}}</p>
+                <div class="meta">
+                    <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
+                    <span>{{post.data.length}} min read</span>
+                    <span>
+                        {% for tag in post.data.tags %}
+                            {# Exclude "posts" tag from being shown #}
+                            {% if tag !== "posts" %}
+                                <a href="/tags/{{tag}}">#{{tag}}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </span>
+                </div>
+                
+            </header>
+        </article>
+    {% endfor %}
 {% endblock %}
