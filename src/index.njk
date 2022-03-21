@@ -1,11 +1,10 @@
-{% extends "layout.njk" %}
+{% extends "layouts/index.njk" %}
 
 {% block main %}
     <h3 class="summary">
         Software engineer, open-source contributor, technical writer.
         <br/>
-        I write about 
-        <a href="/tags/webdev">#webdev</a>.
+        I write about #webdev.
     </h3>
     <h2>All posts</h2>
     {% for post in collections.posts %}
@@ -18,14 +17,14 @@
                 <div class="meta">
                     <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
                     <span>{{post.data.length}} min read</span>
-                    <span>
-                        {% for tag in post.data.tags %}
+                    {# <span> #}
+                        {# {% for tag in post.data.tags %} #}
                             {# Exclude "posts" tag from being shown #}
-                            {% if tag !== "posts" %}
-                                <a href="/tags/{{tag}}">#{{tag}}</a>
-                            {% endif %}
-                        {% endfor %}
-                    </span>
+                            {# {% if tag !== "posts" %} #}
+                                {# <a href="/tags/{{tag}}">#{{tag}}</a> #}
+                            {# {% endif %} #}
+                        {# {% endfor %} #}
+                    {# </span> #}
                 </div>
                 
             </header>
