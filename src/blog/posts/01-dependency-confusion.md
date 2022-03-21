@@ -3,7 +3,7 @@ title: Dependency Confusion attack
 summary: An important note on the security of the npm ecosystem.
 tags: webdev
 
-duration: 4
+length: 4
 date: 2022-03-18
 ---
 In this article, I will talk about private NPM registries, a Dependency Confusion attack, and how a misconfigured private NPM registry can be a potential target for one. I assume that the reader has a basic understanding of the JavaScript ecosystem, including the concept behind Node Package Manager and [the public registry](https://www.npmjs.com/).
