@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts and Styles -->
-  <link rel="stylesheet" href="/styles/fonts.css">
-  <link rel="stylesheet" href="/styles/index.css">
-  
-  <!-- Page-specific styles -->
-  {% block styles %}{% endblock %}
+    <!-- Fonts and Styles -->
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/index.css">
 
-  <title>{{ title }}</title>
-</head>
-<body class="container">
-  <header class="header">
+    <!-- Page-specific styles -->
+    {% block styles %}{% endblock %}
+
+    <title>{{ title }}</title>
+  </head>
+  <body class="container">
+    <header class="header">
       <div class="logo">
-        <a class="logo-link" href="{{website.url}}"><span>GREY</span><span>SCALED</span></a>
+        <a class="logo-link link-undecorate" href="/">
+          <span>GREY</span><span>SCALED</span>
+        </a>
       </div>
-  </header>
-  <main>
-    {%block main %}
-      <h1 style="color: red">Page is missing "main" block<h1>
-    {% endblock %}
-  </main>
-</body>
-</html>
+    </header>
+    <main>
+      {%block main %}
+        <h1 style="color: red">Page is missing "main" block<h1>
+          {% endblock %}
+        </main>
+      </body>
+    </html>

@@ -5,14 +5,14 @@
     <h3 class="summary">{{summary}}</h3>
     <div class="meta">
         <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
-        <span>{{duration}} minutes</span>
+        <span>{{length}} min read</span>
         <span>
-        {% for tag in tags %}
-            {# Exclude blog-posts tags from being shown #}
-            {% if tag !== "blog-posts" %}
-            <a href="/tags/{{tag}}">#{{tag}}</a>
-            {% endif %}
-        {% endfor %}
+            {% for tag in tags %}
+                {# Exclude "posts" tag from being shown #}
+                {% if tag !== "posts" %}
+                    <a href="/tags/{{tag}}">#{{tag}}</a>
+                {% endif %}
+            {% endfor %}
         </span>
     </div>
     <article>
