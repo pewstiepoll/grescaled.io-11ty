@@ -1,0 +1,10 @@
+code {
+    & > .comment { color: var(--code-token-comment); }
+    & > .keyword { color: var(--code-token-keyword); font-weight: bold; }
+    & > .operator { color: var(--code-token-operator); }
+    & > .number { color: var(--code-token-number); font-weight: bold; }
+    & > :is(.string, .template-string) { color: var(--code-token-string); font-style: italic; }
+    & > .function { color: var(--code-token-function); }
+    & > .punctuation { color: var(--code-token-punctuation); }
+    & > .parameter { color: var(--code-token-parameter); }
+}

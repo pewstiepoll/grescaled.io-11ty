@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="/styles/fonts.css">
     <link rel="stylesheet" href="/styles/index.css">
 
-    <!-- Page-specific styles -->
-    {% block styles %}{% endblock %}
+    <!-- Design System -->
+    <link rel="stylesheet" href="/styles/resets.css">
+    <link rel="stylesheet" href="/styles/defaults.css">
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+
+    <!-- Code Theme -->
+    <link rel="stylesheet" href="/styles/code-theme.css">
 
     <title>{{ title }}</title>
   </head>
-  <body>
+  <body class="page">
     <header>
       <div class="logo">
         <a class="logo-link link-undecorate" href="/">
@@ -23,9 +30,7 @@
       </div>
     </header>
     <main>
-      {%block main %}
-        <h1 style="color: red">Page is missing "main" block<h1>
-          {% endblock %}
-        </main>
-      </body>
-    </html>
+      {% block main %}{% endblock %}
+    </main>
+  </body>
+</html>

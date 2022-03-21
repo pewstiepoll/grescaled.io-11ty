@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    font-family: var(--font-article);
+}
+
+main > *,
+article > * {
+    margin: var(--content-spacing) 0;
+}
