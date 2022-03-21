@@ -6,14 +6,14 @@
     <div class="meta">
         <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
         <span>{{length}} min read</span>
-        <span>
-            {% for tag in tags %}
+        {# <span> #}
+            {# {% for tag in tags %} #}
                 {# Exclude "posts" tag from being shown #}
-                {% if tag !== "posts" %}
-                    <a href="/tags/{{tag}}">#{{tag}}</a>
-                {% endif %}
-            {% endfor %}
-        </span>
+                {# {% if tag !== "posts" %} #}
+                    {# <a href="/tags/{{tag}}">#{{tag}}</a> #}
+                {# {% endif %} #}
+            {# {% endfor %} #}
+        {# </span> #}
     </div>
     <article>
         {{content | safe}}
