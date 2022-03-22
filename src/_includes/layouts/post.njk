@@ -1,13 +1,21 @@
 ---
 layout: "layouts/index.njk"
+
 opengraph:
     - type: article
+metatags:
+    - article:author: "Pewstiepoll"
+
+eleventyComputed:
+    metatags:
+        - article:published_time: "{{page.date | htmlDateString}}"
 ---
+
 <main itemscope itemtype="https://schema.org/BlogPosting">
     <h1 itemprop="name">{{title}}</h1>
     <h3 itemprop="abstract" class="summary">{{summary}}</h3>
     <div class="meta">
-        <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
+        <span>{{page.date | readableDateString}}</span>
         <span>{{length}} min read</span>
         <span>
             {% for tag in tags %}

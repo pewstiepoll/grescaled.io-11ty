@@ -20,6 +20,8 @@ module.exports = (config) => {
 
     // Filters
     config.addFilter("formatDate", (date, formatStr) => format(date, formatStr));
+    config.addFilter("htmlDateString", (date) => format(date, "yyyy-MM-dd"));
+    config.addFilter("readableDateString", (date) => format(date, "MMMM dd, yyyy"));
 
     // Custom collections
     config.addCollection("tagList", require("./src/_11ty/create-taglist"));

@@ -3,7 +3,6 @@ layout: "layouts/index.njk"
 page_data:
     title: Greyscaled.io
     summary: Software engineer, open-source contributor, technical writer.
-    og_url: https://greyscaled.io
 ---
 
 <main>
@@ -21,7 +20,7 @@ page_data:
                 </h3>
                 <p>{{post.data.summary}}</p>
                 <div class="meta">
-                    <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
+                    <span>{{post.data.page.date | readableDateString}}</span>
                     <span>{{post.data.length}} min read</span>
                     <span>
                         {% for tag in collections.tagList %}

@@ -24,11 +24,20 @@
 
     <!-- Open Graph -->
     <meta property="og:url" content="{{website.url}}{{page.url}}">
-    <meta property="og:title" content="{{opengraph.title or title or page_data.title or website.title}}">
-    <meta property="og:description" content="{{opengraph.description or summary or page_data.summary}}">
+    <meta property="og:title" content="{{opengraph[0].title or title or page_data.title or website.title}}">
+    <meta property="og:description" content="{{opengraph[0].description or summary or page_data.summary}}">
     {% for entry in opengraph %}
       {% for property, content in entry %}
-        {% if property !== "description" or property !== "title" %}
+        {% if property !== "description" and property !== "title" %}
+          <meta property="og:{{property}}" content="{{content}}">
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    <!-- Meta tags -->
+    {% for entry in metatags %}
+      {% for property, content in entry %}
+        {% if property !== "description" and property !== "title" %}
           <meta property="{{property}}" content="{{content}}">
         {% endif %}
       {% endfor %}

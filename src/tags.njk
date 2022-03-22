@@ -1,19 +1,20 @@
 ---
-    pagination:
-        data: collections.tagList
-        size: 1
-        alias: tag
-        filter:
-            - all
-            - post
-            - tagList
-        addAllPagesToCollections: true
+pagination:
+    data: collections.tagList
+    size: 1
+    alias: tag
+    filter:
+        - all
+        - post
+        - tagList
+    addAllPagesToCollections: true
 
-    layout: "layouts/index.njk"
-    permalink: "/tags/{{tag | slugify}}/"
+layout: "layouts/index.njk"
+permalink: "/tags/{{tag | slugify}}/"
 
+eleventyComputed:
     opengraph:
-        - title: Posts by topic {{tag}}
+        - description: "Posts by topic {{tag}}"
 ---
 
 <h2>Tagged #{{tag}}:</h2>
@@ -25,7 +26,7 @@
             </h3>
             <p>{{post.data.summary}}</p>
             <div class="meta">
-                <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
+                <span>{{post.data.page.date | readableDateString}}</span>
                 <span>{{post.data.length}} min read</span>
                 <span>
                     {% for tag in collections.tagList %}
