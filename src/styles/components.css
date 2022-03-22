@@ -1,9 +1,22 @@
+.page {
+    max-width: 49rem;
+    margin: 0 auto;
+    padding: 0 var(--content-spacing);
+
+    color: var(--black);
+    background-color: var(--white);
+
+    @media (--viewport-mobile) {
+        padding: 0 1rem;
+    }
+}
+
 .logo {
     margin: 0;
-    padding: 0.2em 0;
+    padding: 0.2rem 0;
 
     & .logo-link {
-        font-size: 4em;
+        font-size: calc(var(--font-xxxlarge) * 1.25);
 
         &:hover {
             color: var(--black);
@@ -33,7 +46,7 @@
         }
     }
 
-    @media (--viewport-mobile) {
+    @media screen and (max-width: var(--viewport-mobile)) {
         display: flex;
         justify-content: center;
     }
@@ -68,18 +81,5 @@
 .meta {
     & > * + *:before {
         content: " | ";
-    }
-}
-
-.page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 2rem;
-
-    color: var(--black);
-    background-color: var(--white);
-
-    @media (--viewport-mobile) {
-        padding: 0 1rem;
     }
 }

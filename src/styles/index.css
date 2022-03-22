@@ -1,25 +1,30 @@
-@custom-media --viewport-mobile (max-width: 480px);
-
 :root {
+    /* Colors */
     --white: rgb(252, 252, 253);
     --black: rgb(13, 13, 13);
     --grey: rgb(112, 110, 135);
 
+    /* Font family */
     --font-logo: 'Staatliches';
     --font-title: 'Sintony Bold';
     --font-summary: 'Sintony';
     --font-article: 'Poppins';
 
-    --font-xxxlarge: 48px;
-    --font-xxlarge: 40px;
-    --font-xlarge: 34px;
-    --font-large: 28px;
-    --font-medium: 20px;
-    --font-small: 16px;
-    --font-xsmall: 14px;
-    --font-xxsmall: 12px;
+    /* Font size */
+    --font-xxxlarge: 3rem;
+    --font-xxlarge: 2.5rem;
+    --font-xlarge: 2.125rem;
+    --font-large: 1.75rem;
+    --font-medium: 1.25rem;
+    --font-small: 1rem;
+    --font-xsmall: 0.875rem;
+    --font-xxsmall: 0.75rem;
 
-    --content-spacing: 22px;
+    /* Spacing */
+    --content-spacing: 1.4rem;
+    --spacing-15: 0.9375rem;
+    --spacing-10: 0.625rem;
+    --spacing-5: 0.3125rem;
 
     /* Code theme */
     --code-background: #101010;
@@ -33,4 +38,10 @@
     --code-token-function: #9d9d9d;
     --code-token-punctuation: #9d9d9d;
     --code-token-parameter: #ebebeb;
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
 }
