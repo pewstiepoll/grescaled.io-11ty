@@ -21,6 +21,9 @@ module.exports = (config) => {
     // Filters
     config.addFilter("formatDate", (date, formatStr) => format(date, formatStr));
 
+    // Custom collections
+    config.addCollection("tagList", require("./src/_11ty/create-taglist"));
+
     return {
             dir: {
             input: "src",

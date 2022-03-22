@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Fonts and Styles -->
     <link rel="stylesheet" href="/styles/fonts.css">
@@ -23,9 +23,18 @@
     <link rel="stylesheet" href="/styles/code-theme.css">
 
     <!-- Open Graph -->
-    {% block opengraph %}{% endblock %}
+    <meta property="og:url" content="{{website.url}}{{page.url}}">
+    <meta property="og:title" content="{{opengraph.title or title or page_data.title or website.title}}">
+    <meta property="og:description" content="{{opengraph.description or summary or page_data.summary}}">
+    {% for entry in opengraph %}
+      {% for property, content in entry %}
+        {% if property !== "description" or property !== "title" %}
+          <meta property="{{property}}" content="{{content}}">
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
 
-    <title>{{ title }}</title>
+    <title>{{ title or page.data.title or website.title }}</title>
   </head>
   <body class="page">
     <header>
@@ -36,7 +45,7 @@
       </div>
     </header>
     <main>
-      {% block main %}{% endblock %}
+      {{ content | safe }}
     </main>
   </body>
 </html>

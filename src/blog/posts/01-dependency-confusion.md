@@ -1,7 +1,7 @@
 ---
 title: Dependency Confusion attack
 summary: An important note on the security of the npm ecosystem.
-# tags: webdev
+tags: webdev
 
 length: 4
 date: 2022-03-18

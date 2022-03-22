@@ -1,18 +1,23 @@
 ---
-layout: "layouts/index.njk"
-page_data:
-    title: Greyscaled.io
-    summary: Software engineer, open-source contributor, technical writer.
-    og_url: https://greyscaled.io
+    pagination:
+        data: collections.tagList
+        size: 1
+        alias: tag
+        filter:
+            - all
+            - post
+            - tagList
+        addAllPagesToCollections: true
+
+    layout: "layouts/index.njk"
+    permalink: "/tags/{{tag | slugify}}/"
+
+    opengraph:
+        - title: Posts by topic {{tag}}
 ---
 
-<h3 class="summary">
-    {{page_data.summary}}
-    <br/>
-    I write about <a href="/tags/webdev">#webdev</a>.
-</h3>
-<h2>All posts</h2>
-{% for post in collections.posts %}
+<h2>Tagged #{{tag}}:</h2>
+{% for post in collections[tag] %}
     <article class="article-block">
         <header>
             <h3>

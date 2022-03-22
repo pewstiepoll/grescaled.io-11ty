@@ -1,29 +1,23 @@
-{% extends "layouts/index.njk" %}
+---
+layout: "layouts/index.njk"
+opengraph:
+    - type: article
+---
 
-{% block opengraph %}
-<meta property="og:title" content="{{title}}">
-<meta property="og:type" content="article">
-<meta property="og:description" content="{{summary}}">
-<meta property="og:url" content="{{website.url}}{{page.url}}">
-<meta property="og:publish_time" content="{{page.date | formatDate("yyyy-MM-dd")}}">
-{% endblock %}
-
-{%block main %}
-    <h1>{{title}}</h1>
-    <h3 class="summary">{{summary}}</h3>
-    <div class="meta">
-        <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
-        <span>{{length}} min read</span>
-        {# <span> #}
-            {# {% for tag in tags %} #}
-                {# Exclude "posts" tag from being shown #}
-                {# {% if tag !== "posts" %} #}
-                    {# <a href="/tags/{{tag}}">#{{tag}}</a> #}
-                {# {% endif %} #}
-            {# {% endfor %} #}
-        {# </span> #}
-    </div>
-    <article>
-        {{content | safe}}
-    </article>
-{% endblock %}
+<h1>{{title}}</h1>
+<h3 class="summary">{{summary}}</h3>
+<div class="meta">
+    <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
+    <span>{{length}} min read</span>
+    <span>
+        {% for tag in tags %}
+            {# Exclude "posts" tag from being shown #}
+            {% if tag !== "posts" %}
+                <a href="/tags/{{tag}}">#{{tag}}</a>
+            {% endif %}
+        {% endfor %}
+    </span>
+</div>
+<article>
+    {{content | safe}}
+</article>
