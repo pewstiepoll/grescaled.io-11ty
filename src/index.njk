@@ -1,8 +1,21 @@
+---
+page_data:
+    og_title: Greyscaled.io
+    og_description: Software engineer, open-source contributor, technical writer.
+    og_url: https://greyscaled.io
+---
+
 {% extends "layouts/index.njk" %}
+
+{% block opengraph %}
+<meta property="og:title" content="{{page_data.og_title}}">
+<meta property="og:description" content="{{page_data.og_description}}">
+<meta property="og:url" content="{{website.url}}">
+{% endblock %}
 
 {% block main %}
     <h3 class="summary">
-        Software engineer, open-source contributor, technical writer.
+        {{page_data.og_description}}
         <br/>
         I write about #webdev.
     </h3>

@@ -1,5 +1,13 @@
 {% extends "layouts/index.njk" %}
 
+{% block opengraph %}
+<meta property="og:title" content="{{title}}">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{summary}}">
+<meta property="og:url" content="{{website.url}}{{page.url}}">
+<meta property="og:publish_time" content="{{page.date | formatDate("yyyy-MM-dd")}}">
+{% endblock %}
+
 {%block main %}
     <h1>{{title}}</h1>
     <h3 class="summary">{{summary}}</h3>
