@@ -15,6 +15,7 @@ module.exports = (config) => {
     config.addPlugin(SyntaxHighlightPlugin);
 
     // Path-throughs
+    config.addPassthroughCopy("favicon.ico");
     config.addPassthroughCopy("src/fonts/**/*.ttf");
 
     // Filters
