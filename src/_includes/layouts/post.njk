@@ -3,21 +3,22 @@ layout: "layouts/index.njk"
 opengraph:
     - type: article
 ---
-
-<h1>{{title}}</h1>
-<h3 class="summary">{{summary}}</h3>
-<div class="meta">
-    <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
-    <span>{{length}} min read</span>
-    <span>
-        {% for tag in tags %}
-            {# Exclude "posts" tag from being shown #}
-            {% if tag !== "posts" %}
-                <a href="/tags/{{tag}}">#{{tag}}</a>
-            {% endif %}
-        {% endfor %}
-    </span>
-</div>
-<article>
-    {{content | safe}}
-</article>
+<main itemscope itemtype="https://schema.org/BlogPosting">
+    <h1 itemprop="name">{{title}}</h1>
+    <h3 itemprop="abstract" class="summary">{{summary}}</h3>
+    <div class="meta">
+        <span>{{page.date | formatDate("MMMM dd, yyyy")}}</span>
+        <span>{{length}} min read</span>
+        <span>
+            {% for tag in tags %}
+                {# Exclude "posts" tag from being shown #}
+                {% if tag !== "posts" %}
+                    <a href="/tags/{{tag}}">#{{tag}}</a>
+                {% endif %}
+            {% endfor %}
+        </span>
+    </div>
+    <article itemprop="articleBody">
+        {{content | safe}}
+    </article>
+</main>

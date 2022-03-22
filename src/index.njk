@@ -6,30 +6,32 @@ page_data:
     og_url: https://greyscaled.io
 ---
 
-<h3 class="summary">
-    {{page_data.summary}}
-    <br/>
+<main>
+    <h3 class="summary">
+        {{page_data.summary}}
+        <br/>
     I write about <a href="/tags/webdev">#webdev</a>.
 </h3>
-<h2>All posts</h2>
-{% for post in collections.posts %}
-    <article class="article-block">
-        <header>
-            <h3>
-                <a class="link-undecorate" href="{{post.data.page.url}}">{{post.data.title}}</a>
-            </h3>
-            <p>{{post.data.summary}}</p>
-            <div class="meta">
-                <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
-                <span>{{post.data.length}} min read</span>
-                <span>
-                    {% for tag in collections.tagList %}
-                        {# Exclude "posts" tag from being shown #}
-                        <a href="/tags/{{tag}}">#{{tag}}</a>
-                    {% endfor %}
-                </span>
-            </div>
+    <h2>All posts</h2>
+    {% for post in collections.posts %}
+        <article class="article-block">
+            <header>
+                <h3>
+                    <a class="link-undecorate" href="{{post.data.page.url}}">{{post.data.title}}</a>
+                </h3>
+                <p>{{post.data.summary}}</p>
+                <div class="meta">
+                    <span>{{post.data.page.date | formatDate("MMMM dd, yyyy")}}</span>
+                    <span>{{post.data.length}} min read</span>
+                    <span>
+                        {% for tag in collections.tagList %}
+                            {# Exclude "posts" tag from being shown #}
+                            <a href="/tags/{{tag}}">#{{tag}}</a>
+                        {% endfor %}
+                    </span>
+                </div>
 
-        </header>
-    </article>
-{% endfor %}
+            </header>
+        </article>
+    {% endfor %}
+</main>
