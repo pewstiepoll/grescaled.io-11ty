@@ -37,7 +37,7 @@ Here's an example of how that works:
 ```json
 // package.json:
 "dependencies": {
-    "@acme/core-library": "^1.3.3",
+    "@acme/core-library": "^1.2.3",
     // less conventional
     "@acme/core-library": "1.x.x",
     // idc style
@@ -46,7 +46,7 @@ Here's an example of how that works:
 ```
 3. A hacker creates a malicious version of the package and publishes it in the public NPM registry using the same name as a private package, but with a "newer" version:
 ```
-@acme/core-library@1.3.3
+@acme/core-library@1.999.3
 ```
 4. During the next `npm install` the npm command receives "1.3.3" as the most up-to-date version that matches the package version criteria from package.json and installs it in the project. It could be a new local installation, CI running the pipeline, or someone deploying to a production server.
 
