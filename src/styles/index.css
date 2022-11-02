@@ -1,7 +1,7 @@
 :root {
     /* Colors */
-    --white: rgb(252, 252, 253);
-    --black: rgb(13, 13, 13);
+    --white: rgb(237, 237, 237);
+    --black: rgb(32, 32, 32);
     --grey: rgb(112, 110, 135);
 
     /* Font family */
@@ -38,6 +38,12 @@
     --code-token-function: #9d9d9d;
     --code-token-punctuation: #9d9d9d;
     --code-token-parameter: #ebebeb;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        filter: invert(1);
+    }
 }
 
 @media screen and (max-width: 480px) {
