@@ -2,18 +2,12 @@
 layout: "layouts/index.njk"
 page_data:
     title: Greyscaled.io
-    summary: Software engineer, open-source contributor, technical writer.
+    summary: Jack of none trades.
 ---
 
 <main>
     <h3 class="summary">
         {{page_data.summary}}
-        <br/>
-    I write about 
-        <a href="/tags/webdev">#webdev</a>, 
-        <a href="/tags/cloud">#cloud</a>, 
-        <a href="/tags/algorithms">#algorithms</a>,
-        <a href="/tags/system-design">#system-design</a>.
     </h3>
     {% for post in collections.posts %}
         <article class="article-block">
